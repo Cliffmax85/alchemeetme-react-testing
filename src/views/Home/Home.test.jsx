@@ -1,3 +1,6 @@
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import Home from './Home';
 
 const user = {
   id: 1,
@@ -11,5 +14,17 @@ const user = {
 }
 
 test('Should render the user profile', () => {
+  render(
+    <MemoryRouter>
+      <Home user={user} />
+    </MemoryRouter>
+  );
 
+  // NAME
+  screen.getByText(/vonta/i);
+  // Motto
+  screen.getByText(/res non verba/i);
+  
+
+  screen.debug();
 })

@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom'
 import App from './App';
 
 
@@ -9,14 +8,12 @@ test('Should render the header', async () => {
           <App />
     )
     
-    const altText = screen.getByAltText('Alchemy Logo');
+    screen.getByAltText('Alchemy Logo');
     // console.log('||||||||ALT||||||||', altText);
-
-    expect(altText).toBeInTheDocument();
 
     screen.debug();
 
     const profile = await screen.findByText(/vonta/i);
-    console.log('\\\\PROLFILE///////', profile);
+    // console.log('\\\\PROLFILE///////', profile);
 })
 })
