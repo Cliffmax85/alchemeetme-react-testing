@@ -6,9 +6,7 @@ import App from './App';
 describe('Header', () => {
 test('Should render the header', async () => {
     render(
-        <MemoryRouter>
           <App />
-        </MemoryRouter>
     )
     
     const altText = screen.getByAltText('Alchemy Logo');
