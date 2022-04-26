@@ -24,7 +24,11 @@ test('Should render the user profile', () => {
   screen.getByText(/vonta/i);
   // Motto
   screen.getByText(/res non verba/i);
-  
+  // Interests
+  screen.getByText(/react/i);
+  // Avatar
+  screen.getByAltText(/avatar/i);
+
 
   screen.debug();
 })
