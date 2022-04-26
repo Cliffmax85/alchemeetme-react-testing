@@ -25,9 +25,35 @@ test('Should render the user profile', () => {
   // Motto
   screen.getByText(/res non verba/i);
   // Interests
-  screen.getByText(/react/i);
+  screen.getByText(/interests/i);
   // Avatar
   screen.getByAltText(/avatar/i);
+  // Header
+  screen.getByAltText(/header/i);
+  // List of interests
+  const likesArr = [];
+  const likes = screen.getAllByRole('listitem');
+  likes.map(like => {
+    return likesArr.push(like.textContent)
+  });
+  console.log('\\/likes///', likesArr);
+
+  expect(likesArr).toEqual([
+    // Is there a way to get this ▼ to work?
+    // /react/i,
+    // /anime/i,
+    // /traveling/i,
+    // /living/i,
+    // /tower defense games/i,
+    // /card games/i
+    "React",
+    "Anime",
+    "Traveling",
+    "Living",
+    "Tower Defense Games",
+    "Card Games",
+  ]);
+
 
 
   screen.debug();
