@@ -1,4 +1,23 @@
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom'
+import App from './App';
 
-test('Should render the header', () => {
 
+describe('Header', () => {
+test('Should render the header', async () => {
+    render(
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+    )
+    
+    const altText = screen.getByAltText('Alchemy Logo');
+    console.log('||||||||ALT||||||||', altText);
+
+    expect(altText).toBeInTheDocument();
+
+    screen.debug();
+
+    
+})
 })
